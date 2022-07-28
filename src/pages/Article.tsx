@@ -1,7 +1,9 @@
 import data from '../data/articles.json';
+import { useParams } from 'react-router-dom';
 
 function Article({id = 1}) {
-  const d: any = data.find(a => a.id === id);
+  const params = useParams();
+  const d: any = data.find(a => a.id === Number(params.id));
   
   return (
     <>
